@@ -1,16 +1,21 @@
 #include "main.h"
 
 /**
- * main - Prints half of a string, followed by a new line.
- *
+ * puts_half - Prints half of a string, followed by a new line.
+ * @str: string reference
  * Return: 0
  */
 
-int main(void)
+void puts_half(char *str)
 {
-	char *str;
+	int i;
 
-	str = "0123456789";
-	puts_half(str);
-	return (0);
+	for (i = 0; str[i] != '\0'; i++)
+		;
+	i++;
+	for (i /= 2; str[i] != '\0'; i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
 }
