@@ -9,16 +9,16 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int k = 0;
+	unsigned int k = 1;
 	unsigned int num = 0;
 	unsigned int len;
-	int i = 0;
+	int i;
 
 	len = strlen(b);
 
 	for (i = len - 1; i >= 0; i--)
 	{
-		if ((b[i] == '0') || (b[i] == '1'))
+		if ((b[i] != '0') && (b[i] != '1'))
 			return (0);
 		if (b[i] == '1')
 		{
@@ -26,7 +26,6 @@ unsigned int binary_to_uint(const char *b)
 		}
 		k *= 2;
 	}
-
 	return (num);
 }
 
